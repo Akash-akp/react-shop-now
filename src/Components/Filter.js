@@ -19,6 +19,7 @@ const Filter = ({categories,selected,setSelected}) => {
     
     const closeHamburger = () => {
         document.getElementById('hamburger-menu').classList.add('-left-[100%]');
+        document.getElementById('hamburger-menu').classList.remove('left-0');
         document.getElementById('hamburger-bg').classList.add('hidden');
         document.getElementById('close-btn').classList.add('animate-spin');
         document.body.classList.remove('overflow-hidden');
@@ -39,7 +40,7 @@ const Filter = ({categories,selected,setSelected}) => {
             </div>
             <div className=''>
 
-                <div id='hamburger-bg' className='hidden h-[100vh] w-full fixed bg-gray-500 top-0 opacity-50 z-10'>
+                <div id='hamburger-bg' onClick={closeHamburger} className='hidden h-[100vh] w-full fixed bg-gray-500 top-0 opacity-50 z-10'>
                 </div>
                 <div id='hamburger-menu' className='h-[100vh] w-[300px] fixed top-0 -left-[100%] bg-white opacity-100 z-20 transition-all duration-1000 '>
                     <div className='text-3xl mx-4 my-10 flex  justify-between'>
